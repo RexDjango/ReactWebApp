@@ -1,0 +1,34 @@
+{% load static %}
+<div class="row clearfix" id="nav-header">
+    <div class="col-md-5 col-xs-5">
+            <nav class="navbar-light navbar-expand-sm toggle-btn">
+                <button class="navbar-toggler" type="button" data-toggle="offcanvas" data-target="#nav-side-menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+            <input type="text" class="d-none d-md-block d-xl-block" id="header-search-field" placeholder="Search for something..."/>
+        </div>
+        <div class="col-md-7 col-xs-7">
+            <ul class="float-right">
+                <li id="welcome" class="d-none d-lg-block d-xl-block">Welcome to your adminstration area</li>
+                <li class="fixed-width">
+                    <a href="#">
+                        <span><img src='{% static "images/bell_32px.png" %}' alt="notification" height=24 width=24 area-hidden="true"></span>
+                        <span class="badge badge-warning">3</span>
+                    </a>
+                </li>
+                <li class="fixed-width">
+                    <a href="#">
+                        <span><img src='{% static "images/secured_letter_32px.png" %}' alt="message" height=20 width=20 area-hidden="true"></span>
+                        <span class="badge badge-info">3</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'logout' %}" class="logout">
+                        <span><img src='{% static "images/shutdown_32px.png" %}' alt="message" height=20 width=20 area-hidden="true"></span> <span class="header-logout">log out</span>
+                    </a>
+                </li>
+            </ul>
+            
+        </div>
+</div>

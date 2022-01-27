@@ -1,0 +1,172 @@
+{% extends 'base.html' %}
+
+{% block head_title %}
+Doctors
+{% endblock head_title %}
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="admin-content-con">
+            <header class="clearfix">
+                <h5 class="page_title float-left">Upload Doctor's</h5>
+                <button type="button" class="btn btn-info btn-sm float-right" data-toggle="modal" data-target="#myModal">Open Modal</button>
+            </header>
+            <!-- Modal -->
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <!-- Modal Content -->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Modal Header</h4>
+                        </div>
+                        
+                        <div class="modal-body">
+                            <form class="form">
+                                <div class="row mb-2">
+                                    <div class="col-md-3">
+                                        <label>First Name</label>
+                                        <div><input type="text"  class="form-control" name="fname" placeholder="First Name"></div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Last Name</label>
+                                        <div><input type="text"  class="form-control" name="fname" placeholder="Last Name"></div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Middle Name</label>
+                                        <div><input type="text"  class="form-control" name="fname" placeholder="Middle Name"></div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="control-label" for="appointmentfor">Gender</label>
+                                        <select id="appointmentfor" name="appointmentfor" class="form-control">
+                                            <option value="Choose Department">Choose Gender</option>
+                                            <option value="Gynacology">Male</option>
+                                            <option value="Dermatologist">Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-4">
+                                        <label class="control-label" for="appointmentfor">Department</label>
+                                        <select id="appointmentfor" name="appointmentfor" class="form-control">
+                                            <option value="Choose Department">Choose Department</option>
+                                            <option value="Gynacology">Gynacology</option>
+                                            <option value="Dermatologist">Dermatologist</option>
+                                            <option value="Orthology">Orthology</option>
+                                            <option value="Anesthesiology">Anesthesiology</option>
+                                            <option value="Ayurvedic">Ayurvedic</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="control-label" for="contact">Email Address</label>
+                                        <div><input type="text"  class="form-control" name="contact" placeholder="Email"></div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="control-label" for="contact">Contact Number</label>
+                                        <div><input type="text"  class="form-control" name="contact" placeholder="Contact No."></div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-2">
+                                    <div class="col-md-3">
+                                        <label class="control-label" for="appointmentfor">Clinic Date</label>
+                                        <select id="appointmentfor" name="appointmentfor" class="form-control">
+                                            <option value="Choose Department">Choose Clinic Date</option>
+                                            <option value="Gynacology">Monday</option>
+                                            <option value="Dermatologist">Tuesday</option>
+                                            <option value="Orthology">Wednesday</option>
+                                            <option value="Anesthesiology">Thursday</option>
+                                            <option value="Ayurvedic">Friday</option>
+                                            <option value="Ayurvedic">Saturday</option>
+                                            <option value="Ayurvedic">Sunday</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="control-label" for="appointmentfor">Clinic Time</label>
+                                        <select id="appointmentfor" name="appointmentfor" class="form-control">
+                                            <option value="Choose Department">Choose Clinic Time</option>
+                                            <option value="Gynacology">8:00AM to 12:00AM</option>
+                                            <option value="Dermatologist">1:00PM to 3:00PM</option>
+                                            <option value="Orthology">3:00PM to 5:00PM</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="control-label" for="contact">Room No.</label>
+                                        <div><input type="text"  class="form-control" name="contact" placeholder="Room No."></div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="picture">Select Image</label>
+                                        <input type="file" class="form-control-file" id="picture" name="picture">
+                                    </div>
+                                    
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary pl-5 pr-5"> Save </button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-responsive-sm">
+                <table
+                    class="table table-bordered table-sm table-hover" cellspacing="0" width="100%"
+                >
+                <caption>List of all users</caption>
+                    <thead class="thead-light">
+                    <tr>
+                        <th>Action</th>
+                        <th>Profile</th>
+                        <th>Username</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email Address</th>
+                        <th>Contact</th>
+                        <th>Address</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="action-button">
+                        <button class="btn btn-primary btn-sm"><i class="fa fa-picture-o" aria-hidden="true"></i>
+                            &nbsp; Edit &nbsp;
+                        </button>
+                        <button class="btn btn-danger btn-sm">Delete</button>
+                        </td>
+                        <td>Profile</td>
+                        <td>Admin</td>
+                        <td>Rex</td>
+                        <td>Talacay</td>
+                        <td>rex.v.talacay@gmail.com</td>
+                        <td>09273838125</td>
+                        <td>{% lorem 1 b random %}</td>
+                        <td>Status</td>
+                    </tr>
+                    <tr>
+                        <td class="action-button">
+                        <button class="btn btn-primary btn-sm">
+                            &nbsp; Edit &nbsp;
+                        </button>
+                        <button class="btn btn-danger btn-sm">Delete</button>
+                        </td>
+                        <td>Profile</td>
+                        <td>User</td>
+                        <td>Rex101</td>
+                        <td>Talacay</td>
+                        <td>rex.v.talacay@gmail.com</td>
+                        <td>09273838125</td>
+                        <td>Manggahan II lower Matatdo Brgy San Isidro Parañaque city</td>
+                        <td>Status</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                
+                </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

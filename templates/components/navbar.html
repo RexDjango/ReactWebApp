@@ -1,0 +1,87 @@
+{% load static %}
+<h1 class="d-none d-md-block d-xl-block">{{user}}</h1>
+<ul>
+    <li class="link active">
+        <a href="{% url 'home' %}">
+            <span><img src='{% static "images/circled_menu_32px.png" %}' area-hidden="true" height=24 width=24></span>
+            <span class="d-none d-md-inline d-lg-inline d-xl-inline">Dashboard<span>
+        </a>
+    </li>
+    <li class="link">
+        <a href="#collapse-post" data-toggle="collapse" aria-controls="collapse-post">
+            <span><img src='{% static "images/news_32px.png" %}' area-hidden="true" height=24 width=24></span>
+            <span class="d-none d-md-inline d-lg-inline d-xl-inline">Articles<span>
+            <span class="float-right"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+        </a>
+        <ul class="collapse collapseable" id="collapse-post">
+            <li><a href="{% url 'post' %}">Create New</a></li>
+            <li><a href="{% url 'view-article' %}">View Article</a></li>
+        </ul>
+    </li>
+    <li class="link">
+        <a href="#collapse-comments" data-toggle="collapse" aria-controls="collapse-comments">
+            <span><img src='{% static "images/pencil_32px.png" %}' area-hidden="true" height=24 width=24></span>
+            <span class="d-none d-md-inline d-lg-inline d-xl-inline">Comments<span>
+            <span class="float-right"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+        </a>
+        <ul class="collapse collapseable" id="collapse-comments">
+            <li>
+                <a href="{% url 'approved-comment' %}">
+                    Approved <span class="badge badge-success float-right d-none d-md-inline d-lg-inline d-xl-inline">10</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'unapprove-comment' %}">
+                    Unapproved <span class="badge badge-warning float-right d-none d-md-inline d-lg-inline d-xl-inline">10</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="link">
+        <a href="#">
+            <span><img src='{% static "images/user_32px.png" %}' area-hidden="true" height=24 width=24></span>
+            <span class="d-none d-md-inline d-lg-inline d-xl-inline">Commenters<span>
+        </a>
+    </li>
+    <li class="link">
+        <a href="{% url 'tags' %}">
+            <span><img src='{% static "images/tags_32px.png" %}' area-hidden="true" height=24 width=24></span>
+            <span class="d-none d-md-inline d-lg-inline d-xl-inline">Tags<span>
+        </a>
+    </li>
+    <li class="link">
+        <a href="#collapse-services" data-toggle="collapse" aria-controls="collapse-services">
+            <span><i class="fa fa-wrench fa-2x" aria-hidden="true"></i></span>
+            <span class="d-none d-md-inline d-lg-inline d-xl-inline">Services<span>
+             <span class="float-right"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+        </a>
+        <ul class="collapse collapseable" id="collapse-services">
+            <li><a href="{% url 'post' %}">Laboratory</a></li>
+            <li><a href="{% url 'view-article' %}">Radiology</a></li>
+        </ul>
+    </li>
+    <li class="link">
+        <a href="{% url 'gallery' %}">
+            <span><img src='{% static "images/gallery.png" %}' area-hidden="true" height=24 width=24></span>
+            <span class="d-none d-md-inline d-lg-inline d-xl-inline">Gallery<span>
+        </a>
+    </li>
+    <li class="link">
+        <a href="{% url 'doctors' %}">
+            <span><img src='{% static "images/chief_of_medicine_skin.png" %}' area-hidden="true" height=24 width=24></span>
+            <span class="d-none d-md-inline d-lg-inline d-xl-inline">Doctors<span>
+        </a>
+    </li>
+    <li class="link">
+        <a href="{% url 'users' %}">
+            <span><img src='{% static "images/user_32px.png" %}' area-hidden="true" height=24 width=24></span>
+            <span class="d-none d-md-inline d-lg-inline d-xl-inline">User's<span>
+        </a>
+    </li>
+    <li class="link settings-btn">
+        <a href="{% url 'settings' %}">
+            <span><img src='{% static "images/slider_32px.png" %}' area-hidden="true" height=24 width=24></span>
+            <span class="d-none d-md-inline d-lg-inline d-xl-inline">Settings<span>
+        </a>
+    </li>
+</ul>

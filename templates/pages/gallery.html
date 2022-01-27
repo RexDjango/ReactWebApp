@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="admin-content-con">
+            <header>
+                <h6>Upload picture to gallery</h6>
+            </header>
+            <form class="form" method="POST" action="/api/create-gallery/" enctype="multipart/form-data">
+            {% csrf_token %}
+                <div class="form-group row">
+                    <div class="col-md-8">
+                        <label></label>
+                        <input type="text" class="form-control" name="title" placeholder="Title" value="{{gallery.title}}">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="picture">{% if gallery.picture != 'None' %}{{gallery.picture}}{% else %}Select Picture{% endif %}</label>
+                        <input type="file" class="form-control-file" id="picture" name="picture">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-8">
+                        <label class="sr-only">Description</label>
+                        <input type="text" class="form-control" name="discrip" placeholder="Description" value="{{gallery.discrip}}">
+                    </div>
+                   <div class="col-md-4">
+                        <button type="submit" class="btn btn-primary form-control">Save to Gallery</button>
+                   </div>
+                </div>
+            </form>
+        </div>
+        <div class="admin-content-con">
+            <header>
+                <h6>Gallery List</h6>
+            </header>
+            
+            <div id='admin-gallery-list'>
+                    
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

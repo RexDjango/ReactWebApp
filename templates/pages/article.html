@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+
+
+{% block head_title %}
+Article
+{% endblock head_title %}
+{% block content %}
+
+<div id="content">
+    <header>
+        <h2 class="page_title">Create new article</h2>
+    </header>
+    <div class="content-inner">
+        <div class="form-wrapper">
+            <form class='form' method='POST' action="{{action}}" enctype="multipart/form-data" id='article-create-form'>
+            {% csrf_token %}
+            <input type='hidden' value="{{post.id}}" name='postId'/>
+                <div class="form-group">
+                    <label class="sr-only">Title</label>
+                    <input type="text" class="form-control" id="title" name='title' placeholder="Title" value="{{post.title}}">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only">Short Description</label>
+                    <input type="text" class="form-control" id="descrip" name='descrip' placeholder="Short Description" value="{{post.descrip}}">
+                </div>
+
+                <div class="form-group">
+                    <label for="picture">{% if post.picture != 'None' %}{{post.picture}}{% else %}Select Picture{% endif %}</label>
+                    <input type="file" class="form-control-file" id="picture" name="picture"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="sr-only">Tags</label>
+                    <select data-placeholder="Select tags" class="form-control custom-select" id='article-tag' multiple name="tags">
+                        
+                        {% for x in posttag %}
+                            <option selected value={{x.id}}>{{x.name}}</option>
+                        {% endfor %}
+                        {% for i in posttaglist %}
+                            <option value={{i.id}}>{{i.name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="sr-only">Article</label>
+                    <textarea class="form-control summernote" id="summernote" placeholder="Article" name="content">{{post.content}}</textarea>
+                </div>
+                {% comment %} {% autoescape off %}{{post.content}}{% endautoescape %} {% endcomment %}
+                
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> publish article when I click save
+                    </label>
+                </div>
+
+                <div class="clearfix">
+                    <button type="submit" class="btn btn-primary float-right">{% if btnname == "Update" %}Update{% else  %}Save / Publish{% endif %}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% comment %} <script>
+    function handleArticleCreateFormSubmit(event){
+        event.preventDefault()
+        const myForm=event.target
+        const myFormData=new FormData(myForm)
+        const url=myForm.getAttribute('action')
+        const method=myForm.getAttribute('method')
+
+        const xhr=new XMLHttpRequest()
+        xhr.responseType='json'
+        xhr.open(method,url)
+        xhr.setRequestHeader('HTTP_X_REQUESTED_WITH','XMLHttpRequest')
+        xhr.setRequestHeader('X-Requested-With','XMLHttpRequest')
+        xhr.onload=function(){
+            handleArticleError('',False)
+            if(xhr.status==201){
+                myForm.reset()
+            }else if(xhr.status===400){
+                const errorJson=xhr.response
+                const titleError=errorJson.title
+                let titleErrorMsg;
+                if(titleError){
+                    titleErrorMsg=titleError[0]
+                    if(contentErrorMsg){
+                        handleArticleFormError(titleErrorMsg,true)
+                    }else{
+                        alert('An error occured, please try again')
+                    }
+                }else{
+                    alert('An error occured, please try again later')
+                }
+            }
+        }
+        xhr.onerror=function(){
+            alert('An error occured, please try again')
+        }
+        xhr.send(myFormData)
+    }
+
+    function formArticleElementElement(articleObj){
+        console.log('articleObj ',articleObj.name)
+        var formattedArticle="<option id="+articleObj.id+">"+articleObj.name+"</option>"
+        return formattedArticle
+    }
+
+
+    const ArticleCreateFormEl=document.getElementById('article-create-form')
+    ArticleCreateFormEl.addEventListener('submit',handleArticleCreateFormSubmit)
+
+    const articleContainerElement=document.getElementById('article-tag')
+
+    function loadArticletag(articleContainerElement){
+        const xhr=new XMLHttpRequest()
+        const method='GET'
+        const url=`/api/posttags/`
+        
+        xhr.responseType='json'
+        xhr.open(method,url)
+        xhr.onload=function(){
+            console.log('xhr',xhr.response)
+            const serverResponse=xhr.response
+            const listedItems=serverResponse
+            var finalTag=""
+            var i;
+            for(i=0; i < listedItems.length; i++){
+                var articleObj=listedItems[i]
+                var currentItem=formArticleElementElement(articleObj)
+                finalTag+=currentItem
+            }
+            articleContainerElement.innerHTML=finalTag
+        }
+        xhr.send()
+    }
+    loadArticletag(articleContainerElement)
+</script> {% endcomment %}
+{% endblock content %}

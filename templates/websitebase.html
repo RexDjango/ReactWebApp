@@ -1,0 +1,59 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Site Metas -->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href={% static '/website/css/bootstrap.min.css' %}>
+    <!-- Pogo Slider CSS -->
+    <link rel="stylesheet" href={% static '/website/css/pogo-slider.min.css' %}>
+	  <!-- Site CSS -->
+    <link rel="stylesheet" href={% static '/website/css/style.css' %}>
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href={% static '/website/css/responsive.css' %}>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href={% static '/website/css/custom.css' %}>
+    {% include 'react/css.html'%}
+    <title>
+    {% block head_title %}
+    {% endblock head_title %}
+    </title>
+  </head>
+  <body>
+    {% include 'website/menubar.html' %}
+    {% block content %}
+    {% endblock content %}
+    {% include 'website/footer.html' %}
+    
+    <!-- ALL JS FILES -->
+    {% include 'react/base_embed.html' %}
+	<script src={% static '/website/js/jquery.min.js' %}></script>
+	<script src={% static '/website/js/popper.min.js' %}></script>
+	<script src={% static '/website/js/bootstrap.min.js' %}></script>
+    <!-- ALL PLUGINS -->
+	<script src={% static '/website/js/jquery.magnific-popup.min.js' %}></script>
+  <script src={% static '/website/js/jquery.pogo-slider.min.js' %}></script> 
+	<script src={% static '/website/js/slider-index.js' %}></script>
+	<script src={% static '/website/js/TweenMax.min.js' %}></script>
+	<script src={% static '/website/js/main.js' %}></script>
+	<script src={% static '/website/js/owl.carousel.min.js' %}></script>
+	<script src={% static '/website/js/form-validator.min.js' %}></script>
+  <script src={% static '/website/js/contact-form-script.js' %}></script>
+	<script src={% static '/website/js/isotope.min.js' %}></script>	
+	<script src={% static '/website/js/images-loded.min.js' %}></script>	
+  <script src={% static '/website/js/custom.js' %}></script>
+  {% include 'react/js.html'%}
+  </body>
+</html>

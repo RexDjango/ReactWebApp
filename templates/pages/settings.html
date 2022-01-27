@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div id="content">
+        <header class="clearfix">
+                <h5 class="page_title">General settings</h5>
+        </header>
+        <div class="content-inner">
+            <div class="row">
+                <div class="col-md-6">
+                    <form>
+                        <div class="settings-row">
+                            <h3>Site name</h3>
+                            <p>This is permanently shown on the top left corner of navigation</p>
+                            <div class="form-group">
+                                <input type="text" class="form-control" required="required" title="">
+                            </div>
+                        </div>
+
+                        <div class="settings-row">
+                            <h3>Posts per page</h3>
+                            <p>Control total number of blogs shown on the blog index page.</p>
+                            <div class="form-group">
+                                <input type="number" class="form-control small-input" required="required" title="">
+                            </div>
+                        </div>
+
+                        <div class="settings-row">
+                            <h3>Under maintenance</h3>
+                            <p>Redirect all request to a holding page.</p>
+                            <label>
+                                <input type="checkbox" value="">
+                                Blog is under maintenance
+                            </label>
+                        </div>
+
+                        <div class="settings-row">
+                            <h3>Prevent commenting</h3>
+                            <p>Prevent or Enable visitors to leaving comments.</p>
+                            <select class="form-control custom-select small-input">
+                                <option value="">active</option>
+                                <option value="">disable</option>
+                            </select>
+                        </div>
+
+                        <div class="settings-row">
+                            <h3>Tags visibilty</h3>
+                            <p>Enable or Disable tag visibility on all blogs posts.</p>
+                            <select class="form-control custom-select small-input">
+                                <option value="">active</option>
+                                <option value="">disable</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Save Settings</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

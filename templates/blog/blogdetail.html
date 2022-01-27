@@ -1,0 +1,4 @@
+{% extends 'blogbase.html' %} {% block content %} 
+{% autoescape off %}{{blog.content}}{% endautoescape %}
+<div id="comment-form"></div>
+{% endblock content %}

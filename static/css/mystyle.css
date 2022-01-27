@@ -1,0 +1,153 @@
+#users {
+  margin: 20px 0px 50px 0px;
+  background-color: #fff;
+  border: #1ab394 1px solid;
+  border-top: #1ab394 4px solid;
+}
+
+#users h5{
+  margin: 0px;
+  padding-top: 3px;
+}
+
+#users header {
+  border-bottom: 1px #f3f3f4 solid;
+  padding: 10px 20px;
+  background-color: #fff;
+}
+
+.user-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  margin: 0px;
+}
+
+.user-content {
+  padding: 20px;
+}
+
+.user-create {
+  height: 30px;
+}
+
+.box {
+  border: red 1px solid;
+}
+
+/* .table tbody,tr{
+    height: 30px !important;
+    overflow: scroll;
+} */
+
+#user-button ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+#user-button ul li {
+  float: left;
+}
+
+#user-button ul a {
+  text-decoration: none;
+}
+
+.bg-mycolor{
+  background-color: #1ab394 !important;
+}
+
+.action-btn {
+  text-align: center;
+  position: relative;
+}
+
+.action-btn .action-i:hover {
+  border-color: #00cb68;
+}
+/* top left  arrow sign */
+.action-btn:before {
+  content: "";
+  position: absolute;
+}
+
+.action-btn .action-i {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 20px;
+  margin: 7px;
+  color: #064774;
+  z-index: 1;
+  position: relative;
+  transition: all 0.3s ease 0s;
+}
+
+/* set hover color of icon*/
+.action-btn .action-i:hover {
+  color: #fff;
+}
+
+/* set diamond shape of icon */
+.action-btn .action-i:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  border: 1px solid #16567f;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform: rotate(45deg);
+  transition: all 0.3s ease 0s;
+}
+/* set diamond shape of icon hover color */
+.action-btn:hover .action-i:before {
+  border-color: #00cb86;
+  background: #00cb86;
+}
+
+/*--------------- Separate ----------------------- */
+.action-btn .action-d:hover {
+  border-color: #00cb68;
+}
+.action-btn .action-d {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 20px;
+  margin: 7px;
+  color: #064774;
+  z-index: 1;
+  position: relative;
+  transition: all 0.3s ease 0s;
+}
+
+/* set hover color of icon*/
+.action-btn .action-d:hover {
+  color: red;
+}
+
+/* set diamond shape of icon */
+.action-btn .action-d:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  border: 1px solid #16567f;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform: rotate(45deg);
+  transition: all 0.3s ease 0s;
+}
+/* set diamond shape of icon hover color */
+.action-btn:hover .action-d:before {
+  border-color: #00cb86;
+  background: #00cb86;
+}

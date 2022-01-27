@@ -1,0 +1,61 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href={% static '/bootstrap-4.4.1-dist/css/bootstrap.css' %}>
+    <!-- internal css -->
+    <link rel="stylesheet" type="text/css" href={% static '/css/blogdefault.css' %}>
+    <link rel="stylesheet" type="text/css" href={% static '/css/style.css' %}>
+    {% include 'react/css.html' %}
+    <title>
+    {% block head_title %}
+    {% endblock head_title %}
+    </title>
+  </head>
+  <body>
+  <div class="container-fluid">
+    {% include 'blog/navbar.html' %}
+    <div class="container">
+      <div class="row">
+          <div class="col-md-3 profile">
+              <aside>
+                  <img src={% static '/images/dog.jpg'%} alt="Profile" class="rounded-circle"/>
+                  <h4>Rex V. Talacay</h4>
+                  <p>Django Programmer</p>
+                  <hr>
+                  <p>Share this page:</p>
+                  <ul class="clearfix">
+                      <li><img src={% static '/images/social_icons/twitter.png'%} alt="Profile" class="rounded-circle"/></li>
+                      <li><img src={% static '/images/social_icons/facebook.png'%} alt="Profile" class="rounded-circle"/></li>
+                      <li><img src={% static '/images/social_icons/linkedin.png'%} alt="Profile" class="rounded-circle"/></li>
+                      <li><img src={% static '/images/social_icons/googleplus.png'%} alt="Profile" class="rounded-circle"/></li>
+                      <li><img src={% static '/images/social_icons/pinterest.png'%} alt="Profile" class="rounded-circle"/></li>
+                      <li><img src={% static '/images/social_icons/email.png'%} alt="Profile" class="rounded-circle"/></li>
+                  </ul>
+              </aside>
+          </div>
+          <div class="col-md-8">
+            {% block content %}{% endblock content %}
+          </div>
+      </div>
+  </div>
+  {% include 'components/footer.html' %}
+  </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    {% include 'react/base_embed.html' %}
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src={% static '/bootstrap-4.4.1-dist/js/bootstrap.js' %}></script>
+    <!-- internal css -->
+    <script src={% static '/js/default.js' %}></script>
+    {% include 'react/js.html' %}
+  </body>
+</html>

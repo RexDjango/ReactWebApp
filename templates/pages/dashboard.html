@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block head_title %}
+Dashboard
+{% endblock head_title %}
+
+{% block content %}
+    <div id="dashboard">
+        
+    </div>
+    {% comment %} <script>
+        const dashpostElement=document.getElementById('post-list')
+
+        function formatpostElement(postobj){
+            var formatpost="<tr><td>"+postobj.title+"</td><td>"+postobj.reply+"</td><td>"+postobj.timestamp+"</td><td><button class='btn btn-warning btn-sm'>edit</button><button class='btn btn-primary btn-sm'>view</button><button class='btn btn-danger btn-sm'>del</button></td></tr>"
+            return formatpost
+        }
+
+        function loadDashPost(dashpostElement){
+            const xhr=new XMLHttpRequest()
+            const method="GET"
+            const url='/admin-mng/dashboard-list/'
+
+            xhr.responseType="json"
+            xhr.open(method,url)
+            xhr.onload=function(){
+                console.log(xhr.response)
+                const serverResponse=xhr.response.post
+                const listItems=serverResponse
+                var finalPosts=""
+                var i;
+                for(i = 0; i < listItems.length; i++){
+                    var postobj=listItems[i]
+                    var currentitem=formatpostElement(postobj)
+                    finalPosts += currentitem
+                }
+                dashpostElement.innerHTML=finalPosts
+            }
+            xhr.send()
+        }
+        loadDashPost(dashpostElement)
+    </script> {% endcomment %}
+{% endblock content %}

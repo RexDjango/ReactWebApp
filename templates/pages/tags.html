@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-4 tags-left-cell">
+            <div class="admin-content-con">
+                <header>
+                    <h5>Create tags</h5>
+                </header>
+                <form>
+                    <div class="form-group">
+                        <label>Add comma separated tags below</label>
+                        <p>
+                            <textarea class="form-control" rows="3" placeholder="e.g coding, css, python, django"></textarea>
+                        </p>
+                        <p>
+                            <button type="button" class="btn btn-primary btn-sm btn-block">Save Tags</button>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-8 tags-right-cell">
+            <div class="admin-content-con">
+                <header>
+                    <h5>Tags</h5>
+                </header>
+                <table class="table table-striped table-md table-borderless table-hover">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Status</th>
+                            <th>Created</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in tags %}
+                            <tr>
+                            <td>{{i.status}}</td>
+                            <td><span class="badge badge-success">in use</span></td>
+                            <td>2 days ago</td>
+                            <td>
+                                <button class="btn btn-warning btn-sm">edit</button>
+                                <button class="btn btn-danger btn-sm disabled" aria-disabled="true">delete</button>
+                            </td>
+                            </tr>
+                        {% endfor %}
+                        <tr>
+                            <td>django</td>
+                            <td><span class="badge badge-secondary">not use</span></td>
+                            <td>4 days ago</td>
+                            <td>
+                                <button class="btn btn-warning btn-sm">edit</button>
+                                <button class="btn btn-danger btn-sm" aria-disabled="true">delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock content %} 

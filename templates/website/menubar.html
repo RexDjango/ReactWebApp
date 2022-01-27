@@ -1,0 +1,65 @@
+{% load static %}
+
+
+<!-- LOADER -->
+     <!-- <div id="preloader">
+		<div class="loader">
+			<img src="images/preloader.gif" alt="" />
+		</div>
+    </div>end loader -->
+    <!-- END LOADER -->
+	
+	<!-- Start top bar -->
+	<div class="main-top">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="left-top">
+						<a class="new-btn-d br-2" href="#"><i class="fa fa-calendar" aria-hidden="true"></i><span> Book Appointment</span></a>
+						<div class="mail-b"><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i> demo@gmail.com</a></div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="wel-nots">
+						<p>Welcome to Our Health Lab!</p>
+					</div>
+					<div class="right-top">
+						<ul>
+							<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End top bar -->
+	
+	<!-- Start header -->
+	<header class="top-header">
+		<nav class="navbar header-nav navbar-expand-lg">
+            <div class="container">
+				<a class="navbar-brand" href="index.html"><img src={% static '/website/images/logo.png'%} alt="image"></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+                    <ul class="navbar-nav">
+                        <li><a class="nav-link {% if request.resolver_match.url_name == "website-home" %}active{% endif %}" href={% url 'website-home' %}>Home</a></li>
+                        <li><a class="nav-link {% if request.resolver_match.url_name == "website-about" %}active{% endif %}" href={% url 'website-about' %}>About Us</a></li>
+                        <li><a class="nav-link {% if request.resolver_match.url_name == "website-services" %}active{% endif %}" href={% url 'website-services' %}>Services</a></li>
+						<li><a class="nav-link {% if request.resolver_match.url_name == "website-appointment" %}active{% endif %}" href={% url 'website-appointment' %}>Appointment</a></li>
+                        <li><a class="nav-link {% if request.resolver_match.url_name == "website-gallery" %}active{% endif %}" href={% url 'website-gallery' %}>Gallery</a></li>
+						<li><a class="nav-link {% if request.resolver_match.url_name == "website-doctor" %}active{% endif %}" href={% url 'website-doctor' %}>Doctor</a></li>
+                        <li><a class="nav-link {% if request.resolver_match.url_name == "website-blog" %}active{% endif %}" href={% url 'website-blog' %}>Blog</a></li>
+						<li><a class="nav-link {% if request.resolver_match.url_name == "website-contact "%}active{% endif %}" href={% url 'website-contact' %}>Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+	</header>
+	<!-- End header -->

@@ -1,0 +1,485 @@
+/** ADD YOUR AWESOME CODES HERE **/
+/*------------------------------------------------------------------
+    IMPORT FILES
+-------------------------------------------------------------------*/
+
+@import url(animate.css);
+@import url(font-awesome.min.css);
+@import url(magnific-popup.css);
+@import url(responsiveslides.css);
+@import url(owl.carousel.min.css);
+@import url(flaticon.css);
+
+html,
+body {
+  color: #666666;
+  background-color: #fff;
+  font-size: 15px;
+  font-family: "Catamaran", sans-serif;
+  line-height: 1.80857;
+  position: relative;
+}
+.container-fluid {
+  height: 100vh !important;
+}
+.box-red {
+  border: red 1px solid;
+}
+#side-nav-menu {
+  background-color: rgb(4, 90, 90);
+  padding: 0px;
+}
+
+#side-nav-menu ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+#myheader {
+  text-align: center;
+}
+
+#myheader i {
+  font-size: 50px;
+  color: #fff;
+}
+
+#myheader h3 {
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+}
+
+#side-nav-menu .link > ul > li {
+  padding-bottom: 10px;
+}
+
+#side-nav-menu .link i,
+#side-nav-menu .mysetting i {
+  padding-right: 10px;
+  font-size: 16px;
+}
+
+#side-nav-menu .link a {
+  padding: 12px 18px;
+  text-decoration: none;
+  text-decoration: none;
+  color: rgb(197, 197, 197);
+  font-weight: 500;
+  font-size: 14px;
+  display: block;
+}
+
+#side-nav-menu .collapseable {
+  margin: 0px;
+  padding: 0px;
+  background-color: teal;
+  padding-left: 10px;
+}
+
+#side-nav-menu .collapseable li {
+  padding-left: 20px;
+  padding-top: 5px;
+}
+
+#side-nav-menu .collapseable a {
+  color: #9fb9c2;
+  font-size: 13px;
+  padding: 0px 10px;
+  text-decoration: none;
+  display: block;
+}
+
+#side-nav-menu .collapseable a:hover {
+  color: #fff;
+  background-color: teal;
+}
+
+#side-nav-menu a:hover {
+  background-color: rgb(7, 101, 101);
+  border-left: rgb(6, 239, 252) solid 4px;
+  color: #fff;
+}
+
+#side-nav-menu .collapseable a:hover {
+  color: #fff;
+  background-color: teal;
+  border-left: rgb(6, 239, 252) solid 0px;
+}
+
+#side-nav-menu .link a:focus {
+  background-color: rgb(7, 101, 101);
+  border-left: rgb(6, 239, 252) solid 4px;
+  color: #fff;
+}
+
+#side-nav-menu .mysetting {
+  background-color: rgb(17, 181, 181);
+}
+
+#side-nav-menu .mysetting a {
+  color: #fff;
+  font-size: 13px;
+}
+
+#side-nav-menu .mysetting a:hover,
+#side-nav-menu .mysetting a:focus {
+  background-color: rgb(17, 181, 181);
+  border-left: rgb(6, 239, 252) solid 0px;
+  color: #fff;
+}
+.submenu .menu b:before {
+  display: none;
+}
+.caret {
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari 3.1+ */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none;
+  display: inline-block;
+}
+
+.caret::before {
+  content: "\25B6";
+  color: rgb(250, 248, 248);
+  display: inline-block;
+  margin-right: 6px;
+}
+.submenu li > a > .caret {
+  display: none;
+}
+
+.submenu li:hover .caret {
+  display: inline-block;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.arrow-right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.arrow-left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.arrow-up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.arrow-down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+@media (min-width: 992px) {
+  .sidebar-width,
+  .content-width {
+    float: left;
+  }
+  .sidebar-width {
+    width: 12.666%;
+  }
+
+  .content-width {
+    width: 87.1%;
+  }
+}
+
+.sidebar-width,
+.content-width {
+  position: relative;
+  min-height: 1px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+#menu-bar {
+  background-color: teal;
+}
+
+#menu-bar #header-search-field {
+  padding-top: 5px;
+  vertical-align: middle;
+  width: 300px;
+  border: none;
+  outline: none;
+  background-color: teal;
+  color: rgb(10, 191, 191);
+}
+
+#menu-bar ul {
+  list-style: none;
+  height: 40px;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+
+#menu-bar ul li {
+  text-decoration: none;
+  float: left;
+  margin-left: 15px;
+}
+
+#menu-bar .menu-link {
+  padding-right: 10px;
+  padding: 8px 0px;
+}
+
+#menu-bar .menu-link i {
+  color: #fff;
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+#menu-bar ul .badge {
+  position: absolute;
+  margin-top: 0px;
+}
+
+#menu-bar .user-link {
+  color: #fff;
+  display: block;
+  padding-right: 10px;
+  padding-left: 10px;
+  background-color: rgb(4, 103, 103);
+  padding-top: 5px;
+}
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(10, 191, 191);
+  opacity: 1; /* Firefox */
+}
+
+/* -------- arrow code --------- */
+
+/* .link li.hover > .arrow,
+.link li.hover > .submenu {
+  display: none !important;
+}
+
+.link li > .arrow {
+  display: none;
+  position: absolute;
+  top: 8px;
+  right: 1px;
+  z-index: 1027;
+}
+.link li > .arrow:after,
+.link li > .arrow:before {
+  border: 1px solid transparent;
+  display: block;
+  height: 0;
+  width: 0;
+  position: absolute;
+  left: -19px;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  content: "";
+  border-width: 10px;
+}
+.submenu li > b:before {
+  z-index: 1;
+  left: -20px;
+}
+.submenu li > b:after {
+  z-index: 2;
+}
+.submenu li.hover-show > a + b,
+.submenu li:hover > a + b {
+  display: none;
+}
+@media only screen and (min-width: 992px) {
+  .submenu li.hover.hover-show > a.dropdown-toggle + b,
+  .submenu li.hover:hover > a.dropdown-toggle + b {
+    display: block;
+  }
+} */
+
+/* ------- Dashboard ------------- */
+#dashboard {
+  margin: 20px 10px;
+}
+
+#dashboard .border-mypblue {
+  border: teal 1px solid !important;
+}
+#dashboard .myblue {
+  background-color: teal;
+  color: #fff;
+  padding-top: 2px !important;
+}
+#dashboard .myfootteal {
+  color: teal !important;
+}
+
+#dashboard .border-mygreen {
+  border: #5cb85c 1px solid !important;
+}
+#dashboard .mygreen {
+  background-color: #5cb85c;
+  color: #fff;
+  padding-top: 2px !important;
+}
+#dashboard .myfootgreen {
+  color: #5cb85c !important;
+}
+
+#dashboard .border-myyellow {
+  border: #f0ad4e 1px solid !important;
+}
+#dashboard .myyellow {
+  background-color: #f0ad4e;
+  color: #fff;
+  padding-top: 2px !important;
+}
+#dashboard .myfootyellow {
+  color: #f0ad4e !important;
+}
+
+#dashboard .border-myred {
+  border: #d9534f 1px solid !important;
+}
+#dashboard .myred {
+  background-color: #d9534f;
+  color: #fff;
+  padding-top: 2px !important;
+}
+#dashboard .myfootred {
+  color: #d9534f !important;
+}
+
+#dashboard .card-header .huge {
+  font-size: 34px;
+}
+
+#dashboard .card-footer {
+  padding-top: 3px !important;
+  padding-bottom: 3px !important;
+}
+/* ---------- Footer ------------- */
+#myfooter {
+  background-color: teal;
+  color: rgb(10, 191, 191);
+  position: fixed;
+  bottom: 0px;
+}
+
+/* ----------- Schedule ------ */
+.myschedule {
+  margin: 0px;
+  padding: 0px;
+}
+
+.mycalendar > header > ul {
+  list-style: none;
+}
+
+.mycalendar > header > ul > li {
+  text-decoration: none;
+  float: left;
+}
+
+.widget-box.transparent {
+  border-width: 0;
+}
+
+.widget-box.transparent > .widget-header {
+  background: 0 0;
+  border-width: 0;
+  border-bottom: 1px solid #dce8f1;
+  color: #4383b4;
+  padding-left: 3px;
+}
+
+.widget-box.transparent > .widget-body {
+  border-width: 0;
+  background-color: transparent;
+}
+
+.widget-box {
+  padding: 0;
+  box-shadow: none;
+  margin: 3px 0;
+  border: 1px solid #ccc;
+}
+
+.external-event {
+  margin: 6px 0;
+  padding: 0;
+  cursor: default;
+  display: block;
+  font-size: 13px;
+  line-height: 28px;
+  color: #fff;
+}
+
+.badge-grey,
+.badge.badge-grey,
+.label-grey,
+.label.label-grey {
+  background-color: #a0a0a0;
+}
+
+.badge-success,
+.badge.badge-success,
+.label-success,
+.label.label-success {
+  background-color: #82af6f;
+}
+
+.badge-danger,
+.badge-important,
+.badge.badge-danger,
+.badge.badge-important,
+.label-danger,
+.label-important,
+.label.label-danger,
+.label.label-important {
+  background-color: #d15b47;
+}
+
+.badge-pink,
+.badge.badge-pink,
+.label-pink,
+.label.label-pink {
+  background-color: #d6487e;
+}
+
+.badge-info,
+.badge.badge-info,
+.label-info,
+.label.label-info {
+  background-color: #3a87ad;
+}
+
+.badge-purple,
+.badge.badge-purple,
+.label-purple,
+.label.label-purple {
+  background-color: #9585bf;
+}
+.badge-yellow,
+.badge.badge-yellow,
+.label-yellow,
+.label.label-yellow {
+  background-color: #fee188;
+}
+
+.ui-draggable-handle {
+  -ms-touch-action: none;
+  touch-action: none;
+}
